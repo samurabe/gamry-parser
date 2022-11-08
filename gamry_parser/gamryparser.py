@@ -93,7 +93,6 @@ class GamryParser:
             self._header["DATE"] + " " + self._header["TIME"],
             dayfirst=True,
             infer_datetime_format=True
-            ),
         )
         for curve in self._curves:
             curve["T"] = start_time + pd.to_timedelta(curve["T"], "s")
