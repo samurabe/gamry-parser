@@ -91,8 +91,8 @@ class GamryParser:
 
         start_time = pd.to_datetime(
             self._header["DATE"] + " " + self._header["TIME"],
-            dayfirst=bool(
-                re.search(r"[0-9]+\-[0-9]+\-[0-2]{1}[0-9]{3}", self._header["DATE"])
+            dayfirst=True,
+            infer_datetime_format=True
             ),
         )
         for curve in self._curves:
