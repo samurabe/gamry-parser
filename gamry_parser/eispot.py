@@ -12,6 +12,7 @@ class Impedance(parser.GamryParser):
 
         Returns:
             pandas.DataFrame:
+                - T: time, in seconds or Timestamp
                 - Freq (float): frequency, in Hz
                 - Zreal (float): Real Impedance, in ohms
                 - Zimag (float): Imaginary Impedance, in ohms
@@ -22,4 +23,4 @@ class Impedance(parser.GamryParser):
 
         assert self.loaded, "DTA file not loaded. Run Impedance.load()"
         df = self._curves[curve]
-        return df[["Freq", "Zreal", "Zimag", "Zmod", "Zphz"]]
+        return df[["T","Freq", "Zreal", "Zimag", "Zmod", "Zphz"]]
